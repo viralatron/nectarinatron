@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
+import getXMLStreams, { getXML } from "./Helper";
 
 function App() {
+  useEffect(() => {
+    // getXMLStreams();
+    console.log(getXML("streams"));
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
