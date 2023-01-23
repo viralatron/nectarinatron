@@ -1,28 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useEffect } from "react";
-import getXMLStreams, { getXML } from "./Helper";
+import "./App.scss";
+import { useEffect, useState } from "react";
+import Player from "./Components/Player";
 
 function App() {
+  const getStreams = async () => {
+    const getData = await fetch(`${process.env.PUBLIC_URL}/streams.json`);
+    const response = await getData.json();
+    setStreams(response.streams);
+  };
+
+  const [streams, setStreams] = useState();
   useEffect(() => {
-    // getXMLStreams();
-    console.log(getXML("streams"));
+    getStreams();
   }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {streams !== undefined ? <Player streams={streams} /> : null}
       </header>
     </div>
   );

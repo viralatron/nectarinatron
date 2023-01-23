@@ -6,7 +6,7 @@
       "name": "http://nectarine.ers35.net:8000/necta192.mp3",
       "country": "US",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 4,
@@ -14,7 +14,7 @@
       "name": "http://necta.burn.net:8000/nectarine",
       "country": "US",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 5,
@@ -22,7 +22,7 @@
       "name": "http://nectarine.inversi0n.org:8000/necta192.mp3",
       "country": "CZ",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 6,
@@ -30,7 +30,7 @@
       "name": "http://nectarine.shakeme.info:8000/nectarine",
       "country": "DE",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 7,
@@ -38,7 +38,7 @@
       "name": "https://scenestream.io/necta48.aac",
       "country": "EU",
       "bitrate": 48,
-      "type": "AAC"
+      "type": "aac"
     },
     {
       "id": 8,
@@ -46,7 +46,7 @@
       "name": "https://scenestream.io/necta128.ogg",
       "country": "EU",
       "bitrate": 128,
-      "type": "OGG"
+      "type": "ogg"
     },
     {
       "id": 9,
@@ -54,7 +54,7 @@
       "name": "https://scenestream.io/necta64.ogg",
       "country": "EU",
       "bitrate": 64,
-      "type": "OGG"
+      "type": "ogg"
     },
     {
       "id": 11,
@@ -62,7 +62,7 @@
       "name": "http://nectarine.from-de.com/necta192",
       "country": "DE",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 12,
@@ -70,7 +70,7 @@
       "name": "http://nectarine.from-de.com/necta64",
       "country": "DE",
       "bitrate": 64,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 13,
@@ -78,7 +78,7 @@
       "name": "http://pmaster.no:9000/necta",
       "country": "NO",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     },
     {
       "id": 15,
@@ -86,7 +86,7 @@
       "name": "https://scenestream.io/opus",
       "country": "EU",
       "bitrate": 64,
-      "type": "OPUS"
+      "type": "opus"
     },
     {
       "id": 16,
@@ -94,7 +94,7 @@
       "name": "http://nectarine.bgp.wtf:1337/nectarine",
       "country": "EU",
       "bitrate": 192,
-      "type": "MP3"
+      "type": "mpeg"
     }
   ]
 }
