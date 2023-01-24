@@ -45,15 +45,20 @@ const Player = ({ streams }) => {
 
   function Bars() {
     const [data, setData] = useState([]);
+    const { viewport } = useThree();
     useFrame(() => {
       analyser.getFloatTimeDomainData(dataArray);
 
       setData([...dataArray]);
     });
     return (
-      <group position={[(-bufferLength + 1) / 2, 0, 0]}>
+      <group position={[0, 0, 0]}>
         {data.map((el, ind) => (
-          <mesh key={ind} position={[ind, 0, 0]} scale={[0.2, el * 12, 0.2]}>
+          <mesh
+            key={ind}
+            position={[ind - bufferLength / 2, 0, 0]}
+            scale={[0.2, el * 12, 0.2]}
+          >
             <boxGeometry />
             <meshStandardMaterial
               color={`rgba(100%, ${el * 100}%, ${el * 100}%)`}
@@ -74,12 +79,34 @@ const Player = ({ streams }) => {
       }
     });
     return (
-      <PerspectiveCamera
-        aspect={viewport.aspect}
-        fov={75}
-        makeDefault={true}
-        position={[0, 0, isVert ? 20 : 15]}
-      />
+      <group>
+        <PerspectiveCamera
+          aspect={viewport.aspect}
+          fov={65}
+          makeDefault={true}
+          position={[0, 0, isVert ? 20 : 15]}
+        />
+        <group
+          position={[
+            isVert ? -viewport.width / 2 + 2 : -viewport.width / 2 + 10,
+            isVert ? -viewport.height / 2 + 2 : -viewport.height / 2 + 6,
+            5,
+          ]}
+          onClick={() => stopMusic()}
+        >
+          <StopButton />
+        </group>
+        <group
+          position={[
+            isVert ? viewport.width / 2 - 2 : viewport.width / 2 - 10,
+            isVert ? -viewport.height / 2 + 2 : -viewport.height / 2 + 6,
+            5,
+          ]}
+          onClick={() => startMusic()}
+        >
+          <PlayButton />
+        </group>
+      </group>
     );
   }
 
@@ -128,12 +155,6 @@ const Player = ({ streams }) => {
         <React.Suspense fallback={<></>}>
           <Bars />
         </React.Suspense>
-        <group position={[-5, -2, 5]} onClick={() => stopMusic()}>
-          <StopButton />
-        </group>
-        <group position={[5, -2, 5]} onClick={() => startMusic()}>
-          <PlayButton />
-        </group>
       </Canvas>
       {typeof streams === "object" ? (
         <audio
