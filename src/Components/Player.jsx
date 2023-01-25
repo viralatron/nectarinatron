@@ -1,6 +1,7 @@
-import { CameraShake, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Effects } from "@react-three/drei";
 import {
   Canvas,
+  render,
   extend,
   useFrame,
   useLoader,
@@ -9,16 +10,20 @@ import {
 import React, { Suspense, useState } from "react";
 
 import { useEffect, useRef } from "react";
+import { Vector2 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { RenderPixelatedPass } from "../postprocessing/RenderPixelatedPass.js";
+
+extend({ RenderPixelatedPass });
 
 const Player = ({ streams }) => {
-  const canvasRef = useRef(null);
   const audRef = useRef(null);
   const audCtx = new (window.AudioContext || window.webkitAudioContext)();
   let audSrc;
   let analyser;
   let bufferLength;
   let dataArray;
+  let composer;
   const startMusic = () => {
     audCtx.resume();
     audSrc.play();
@@ -45,7 +50,6 @@ const Player = ({ streams }) => {
 
   function Bars() {
     const [data, setData] = useState([]);
-    const { viewport } = useThree();
     useFrame(() => {
       analyser.getFloatTimeDomainData(dataArray);
 
@@ -61,13 +65,30 @@ const Player = ({ streams }) => {
           >
             <boxGeometry />
             <meshStandardMaterial
-              color={`rgba(100%, ${el * 100}%, ${el * 100}%)`}
+              color={`cyan`}
+              roughness={0.3}
+              metalness={1}
             />
           </mesh>
         ))}
       </group>
     );
   }
+
+  function PixelPass() {
+    const { scene, camera, size } = useThree();
+    const screenResolution = new Vector2(size.width, size.height);
+
+    return (
+      <Effects>
+        <renderPixelatedPass
+          args={[screenResolution, 2, scene, camera, {}]}
+          attachArray="passes"
+        />
+      </Effects>
+    );
+  }
+
   function Camera() {
     const { viewport } = useThree();
     const [isVert, setVert] = useState(false);
@@ -136,19 +157,22 @@ const Player = ({ streams }) => {
 
     return (
       <Suspense fallback={null}>
-        <primitive
-          ref={meshRef}
-          object={gltf.scene}
-          scale={0.75}
-          color={"red"}
-        />
+        <primitive ref={meshRef} object={gltf.scene} scale={0.75} />
       </Suspense>
     );
   }
 
   return (
     <div className="player">
-      <Canvas className="mediaPlayer">
+      <Canvas
+        className="mediaPlayer"
+        gl={{
+          powerPreference: "high-performance",
+          antialias: false,
+          alpha: false,
+        }}
+      >
+        <PixelPass />
         <Camera />
         <ambientLight intensity={0.1} />
         <directionalLight color="white" position={[0, 0, 5]} />
