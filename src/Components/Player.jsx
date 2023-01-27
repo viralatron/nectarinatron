@@ -1,12 +1,11 @@
-import { PerspectiveCamera, Hud, OrbitControls } from "@react-three/drei";
+import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 
 import { useEffect, useRef } from "react";
 import PixelPass from "../postprocessing/PixelPass.jsx";
-import HUD from "../Scenes/HUD.jsx";
 import MainScene from "../Scenes/MainScene.jsx";
-// separar as scenes pra renderizar à parte
+import Controls from "./Controls.jsx";
 
 const Player = ({ streams }) => {
   const audRef = useRef(null);
@@ -50,28 +49,18 @@ const Player = ({ streams }) => {
   };
   return (
     <div className="player">
-      <Canvas
-        className="mediaPlayer"
-        gl={{
-          powerPreference: "high-performance",
-          antialias: false,
-          alpha: true,
-        }}
-      >
-        <PerspectiveCamera makeDefault position={[0, 0, 0]} />
+      <Canvas className="mediaPlayer">
+        <PerspectiveCamera makeDefault={true} position={[0, 0, 10]} />
         <ambientLight intensity={0.1} />
         <directionalLight color="white" position={[0, 0, 5]} />
         <ProcessAudio />
         <PixelPass />
-        <HUD start={startMusic} stop={stopMusic} />
-        <mesh scale={200}>
-          <torusGeometry args={[1, 0.25, 32, 100]} />
-          <meshStandardMaterial />
-        </mesh>
-        <MainScene data={data} />
-        <Suspense fallback={<></>}></Suspense>
+        <Suspense fallback={<></>}>
+          <MainScene data={data} />
+        </Suspense>
         <OrbitControls />
       </Canvas>
+      <Controls start={startMusic} stop={stopMusic} />
       {typeof streams === "object" ? (
         <audio
           className="audioSrc"
