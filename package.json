@@ -1,6 +1,7 @@
 {
   "name": "nectarinatron",
   "version": "0.1.0",
+  "homepage": "https://www.danielamaral.dev.br/nectarinatron",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.56.2",
