@@ -1,63 +1,7 @@
 {
   "streams": [
     {
-      "id": 2,
-      "url": "https://nectarine.ers35.net:8000/necta192.mp3",
-      "name": "https://nectarine.ers35.net:8000/necta192.mp3",
-      "country": "US",
-      "bitrate": 192,
-      "type": "mpeg"
-    },
-    {
-      "id": 4,
-      "url": "https://necta.burn.net:8000/nectarine",
-      "name": "https://necta.burn.net:8000/nectarine",
-      "country": "US",
-      "bitrate": 192,
-      "type": "mpeg"
-    },
-    {
-      "id": 5,
-      "url": "https://nectarine.inversi0n.org:8000/necta192.mp3",
-      "name": "https://nectarine.inversi0n.org:8000/necta192.mp3",
-      "country": "CZ",
-      "bitrate": 192,
-      "type": "mpeg"
-    },
-    {
-      "id": 6,
-      "url": "https://nectarine.shakeme.info:8000/nectarine",
-      "name": "https://nectarine.shakeme.info:8000/nectarine",
-      "country": "DE",
-      "bitrate": 192,
-      "type": "mpeg"
-    },
-    {
-      "id": 7,
-      "url": "https://scenestream.io/necta48.aac",
-      "name": "https://scenestream.io/necta48.aac",
-      "country": "EU",
-      "bitrate": 48,
-      "type": "aac"
-    },
-    {
-      "id": 8,
-      "url": "https://scenestream.io/necta128.ogg",
-      "name": "https://scenestream.io/necta128.ogg",
-      "country": "EU",
-      "bitrate": 128,
-      "type": "ogg"
-    },
-    {
-      "id": 9,
-      "url": "https://scenestream.io/necta64.ogg",
-      "name": "https://scenestream.io/necta64.ogg",
-      "country": "EU",
-      "bitrate": 64,
-      "type": "ogg"
-    },
-    {
-      "id": 11,
+      "id": 1,
       "url": "https://nectarine.from-de.com/necta192",
       "name": "https://nectarine.from-de.com/necta192",
       "country": "DE",
@@ -65,36 +9,36 @@
       "type": "mpeg"
     },
     {
-      "id": 12,
-      "url": "https://nectarine.from-de.com/necta64",
-      "name": "https://nectarine.from-de.com/necta64",
-      "country": "DE",
+      "id": 2,
+      "url": "https://scenestream.io/necta128.ogg",
+      "name": "https://scenestream.io/necta128.ogg",
+      "country": "EU",
+      "bitrate": 128,
+      "type": "ogg"
+    },
+    {
+      "id": 3,
+      "url": "https://scenestream.io/necta64.ogg",
+      "name": "https://scenestream.io/necta64.ogg",
+      "country": "EU",
       "bitrate": 64,
-      "type": "mpeg"
+      "type": "ogg"
     },
     {
-      "id": 13,
-      "url": "https://pmaster.no:9000/necta",
-      "name": "https://pmaster.no:9000/necta",
-      "country": "NO",
-      "bitrate": 192,
-      "type": "mpeg"
+      "id": 4,
+      "url": "https://scenestream.io/necta48.aac",
+      "name": "https://scenestream.io/necta48.aac",
+      "country": "EU",
+      "bitrate": 48,
+      "type": "aac"
     },
     {
-      "id": 15,
+      "id": 5,
       "url": "https://scenestream.io/opus",
       "name": "https://scenestream.io/opus",
       "country": "EU",
       "bitrate": 64,
       "type": "opus"
-    },
-    {
-      "id": 16,
-      "url": "https://nectarine.bgp.wtf:1337/nectarine",
-      "name": "https://nectarine.bgp.wtf:1337/nectarine",
-      "country": "EU",
-      "bitrate": 192,
-      "type": "mpeg"
     }
   ]
 }
