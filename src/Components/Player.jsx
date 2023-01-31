@@ -1,9 +1,8 @@
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import React, { Suspense, useState } from "react";
 
 import { useEffect, useRef } from "react";
-import PixelPass from "../postprocessing/PixelPass.jsx";
 import MainScene from "../Scenes/MainScene.jsx";
 import Controls from "./Controls.jsx";
 
@@ -37,7 +36,7 @@ const Player = ({ streams }) => {
       source.connect(analyser);
       source.connect(audCtx.destination);
       bufferLength = analyser.frequencyBinCount;
-      dataArray = new Float32Array(bufferLength);
+      dataArray = new Float32Array(8);
     }
   }, [audSrc]);
 
@@ -49,16 +48,26 @@ const Player = ({ streams }) => {
   };
   return (
     <div className="player">
-      <Canvas className="mediaPlayer">
-        <PerspectiveCamera makeDefault={true} position={[0, 0, 10]} />
-        <ambientLight intensity={0.1} />
-        <directionalLight color="white" position={[0, 0, 5]} />
+      <Canvas
+        className="mediaPlayer"
+        shadows
+        gl={{
+          antialias: false,
+        }}
+        camera={{
+          position: [0, 30, 30],
+          fov: 85,
+          near: 1,
+          far: 10000,
+          castShadow: false,
+        }}
+      >
         <ProcessAudio />
-        <PixelPass />
+        <color attach="background" args={["#8173C9"]} />
         <Suspense fallback={<></>}>
           <MainScene data={data} />
         </Suspense>
-        <OrbitControls />
+        <OrbitControls makeDefault />
       </Canvas>
       <Controls start={startMusic} stop={stopMusic} />
       {typeof streams === "object" ? (

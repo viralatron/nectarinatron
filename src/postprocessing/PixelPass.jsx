@@ -12,7 +12,7 @@ const PixelPass = () => {
   return (
     <Effects>
       <renderPixelatedPass
-        args={[screenResolution, 2, scene, camera, {}]}
+        args={[screenResolution, 4, scene, camera, {}]}
         attachArray="passes"
       />
     </Effects>
