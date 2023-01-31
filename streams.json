@@ -2,32 +2,32 @@
   "streams": [
     {
       "id": 2,
-      "url": "http://nectarine.ers35.net:8000/necta192.mp3",
-      "name": "http://nectarine.ers35.net:8000/necta192.mp3",
+      "url": "https://nectarine.ers35.net:8000/necta192.mp3",
+      "name": "https://nectarine.ers35.net:8000/necta192.mp3",
       "country": "US",
       "bitrate": 192,
       "type": "mpeg"
     },
     {
       "id": 4,
-      "url": "http://necta.burn.net:8000/nectarine",
-      "name": "http://necta.burn.net:8000/nectarine",
+      "url": "https://necta.burn.net:8000/nectarine",
+      "name": "https://necta.burn.net:8000/nectarine",
       "country": "US",
       "bitrate": 192,
       "type": "mpeg"
     },
     {
       "id": 5,
-      "url": "http://nectarine.inversi0n.org:8000/necta192.mp3",
-      "name": "http://nectarine.inversi0n.org:8000/necta192.mp3",
+      "url": "https://nectarine.inversi0n.org:8000/necta192.mp3",
+      "name": "https://nectarine.inversi0n.org:8000/necta192.mp3",
       "country": "CZ",
       "bitrate": 192,
       "type": "mpeg"
     },
     {
       "id": 6,
-      "url": "http://nectarine.shakeme.info:8000/nectarine",
-      "name": "http://nectarine.shakeme.info:8000/nectarine",
+      "url": "https://nectarine.shakeme.info:8000/nectarine",
+      "name": "https://nectarine.shakeme.info:8000/nectarine",
       "country": "DE",
       "bitrate": 192,
       "type": "mpeg"
@@ -58,24 +58,24 @@
     },
     {
       "id": 11,
-      "url": "http://nectarine.from-de.com/necta192",
-      "name": "http://nectarine.from-de.com/necta192",
+      "url": "https://nectarine.from-de.com/necta192",
+      "name": "https://nectarine.from-de.com/necta192",
       "country": "DE",
       "bitrate": 192,
       "type": "mpeg"
     },
     {
       "id": 12,
-      "url": "http://nectarine.from-de.com/necta64",
-      "name": "http://nectarine.from-de.com/necta64",
+      "url": "https://nectarine.from-de.com/necta64",
+      "name": "https://nectarine.from-de.com/necta64",
       "country": "DE",
       "bitrate": 64,
       "type": "mpeg"
     },
     {
       "id": 13,
-      "url": "http://pmaster.no:9000/necta",
-      "name": "http://pmaster.no:9000/necta",
+      "url": "https://pmaster.no:9000/necta",
+      "name": "https://pmaster.no:9000/necta",
       "country": "NO",
       "bitrate": 192,
       "type": "mpeg"
@@ -90,8 +90,8 @@
     },
     {
       "id": 16,
-      "url": "http://nectarine.bgp.wtf:1337/nectarine",
-      "name": "http://nectarine.bgp.wtf:1337/nectarine",
+      "url": "https://nectarine.bgp.wtf:1337/nectarine",
+      "name": "https://nectarine.bgp.wtf:1337/nectarine",
       "country": "EU",
       "bitrate": 192,
       "type": "mpeg"
