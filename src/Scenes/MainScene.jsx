@@ -19,7 +19,6 @@ const MainScene = ({ data }) => {
         shadow-camera-bottom={-100}
         shadow-mapSize-width={4096}
         shadow-mapSize-height={4096}
-        shadow-bias={false}
       />
       <ambientLight />
       <group position={[-4, 0.01, 0]} scale={2}>

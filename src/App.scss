@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 .App {
   text-align: center;
 }
@@ -33,15 +35,42 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    bottom: 0;
+    bottom: 2rem;
     z-index: 99;
     margin-bottom: 2rem;
+  }
+  &__info {
+    font-family: "VT323", monospace;
+    position: absolute;
+    top: 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    flex-direction: column;
+    width: 100%;
+    h1,
+    h2 {
+      margin: 0.5rem;
+      text-align: center;
+      font-weight: 400;
+      color: #ab4444;
+    }
   }
   &__button {
     height: 4rem;
     width: 8rem;
     font-size: 2rem;
     font-weight: 700;
+    border-radius: 6px;
+    background: #f1e8b8;
+    border: 12px solid;
+    border-color: #f1e8b8 #dcc64e #dcc64e #f1e8b8;
+    box-sizing: border-box;
+    color: #ab4444;
+    transition: border 0.2s;
+    &:active {
+      border-color: #dcc64e #f1e8b8 #f1e8b8 #dcc64e;
+    }
   }
   .mediaPlayer {
     z-index: 1;

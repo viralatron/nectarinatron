@@ -48,6 +48,10 @@ const Player = ({ streams }) => {
   };
   return (
     <div className="player">
+      <div className="player__info">
+        <h1>nectarinatron</h1>
+        <h2>(just a nectarine radio web player)</h2>
+      </div>
       <Canvas
         className="mediaPlayer"
         shadows
