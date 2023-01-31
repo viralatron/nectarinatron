@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/nectarinatron/static/css/main.3b9d9903.css",
-    "main.js": "/nectarinatron/static/js/main.c4cce15f.js",
+    "main.js": "/nectarinatron/static/js/main.87e19712.js",
     "static/js/787.f9b73cc1.chunk.js": "/nectarinatron/static/js/787.f9b73cc1.chunk.js",
     "index.html": "/nectarinatron/index.html",
     "main.3b9d9903.css.map": "/nectarinatron/static/css/main.3b9d9903.css.map",
-    "main.c4cce15f.js.map": "/nectarinatron/static/js/main.c4cce15f.js.map",
+    "main.87e19712.js.map": "/nectarinatron/static/js/main.87e19712.js.map",
     "787.f9b73cc1.chunk.js.map": "/nectarinatron/static/js/787.f9b73cc1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b9d9903.css",
-    "static/js/main.c4cce15f.js"
+    "static/js/main.87e19712.js"
   ]
 }
